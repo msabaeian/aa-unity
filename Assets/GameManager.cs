@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = Screen.currentResolution.refreshRate > 60 ? 60 : Screen.currentResolution.refreshRate ;
         spinner = FindFirstObjectByType<Spinner>();
         spawn = FindFirstObjectByType<Spawn>();
-        levelLabel = FindFirstObjectByType<TextMeshProUGUI>();
+        levelLabel = GameObject.FindGameObjectWithTag("LevelLabel").GetComponent<TextMeshProUGUI>();
         LoadLevel(1);
     }
 
@@ -125,5 +125,10 @@ public class GameManager : MonoBehaviour
         
         spinner.enabled = true;
         spawn.enabled = true;
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

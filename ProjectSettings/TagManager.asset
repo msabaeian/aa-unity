@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spinner
   - Pin
+  - LevelLabel
   layers:
   - Default
   - TransparentFX
