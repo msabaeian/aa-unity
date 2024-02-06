@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
-            // DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -48,7 +47,8 @@ public class GameManager : MonoBehaviour
         spinner = FindFirstObjectByType<Spinner>();
         spawn = FindFirstObjectByType<Spawn>();
         levelLabel = GameObject.FindGameObjectWithTag("LevelLabel").GetComponent<TextMeshProUGUI>();
-        LoadLevel(1);
+        this.levelNumber = PlayerPrefs.GetInt("levelNumber", 1);
+        LoadLevel(this.levelNumber);
     }
 
     public void GameOver()
@@ -89,10 +89,12 @@ public class GameManager : MonoBehaviour
 
     private void LoadLevel(int level)
     {
+        PlayerPrefs.SetInt("levelNumber", level);
+        PlayerPrefs.Save();
+        
         gameOver = false;
         levelNumber = level;
         levelLabel.text = $"Level: {level}";
-        
         int pins;
         int defaultPinsOnSpinner;
         switch (level)

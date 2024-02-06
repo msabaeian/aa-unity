@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public void StartGame()
+    private void OpenLevelScene()
     {
         SceneManager.LoadScene("Level1");
+    }
+    public void StartGame()
+    {
+        PlayerPrefs.SetInt("levelNumber", 1);
+        this.OpenLevelScene();
     }
     
     public void Continue()
     {
-        StartGame();
+        this.OpenLevelScene();
     }
 
     public void ExitGame()
