@@ -15,21 +15,13 @@ public class Spawn : MonoBehaviour
         this.UpdatePinLeftLabel();
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            this.SpawnPin();
-        }
-    }
-
     public void SetLevelPins(int pins)
     {
         levelPinsCount = pins;
         UpdatePinLeftLabel();
     }
 
-    private void SpawnPin()
+    public void SpawnPin()
     {
         if (levelPinsCount > 0)
         {

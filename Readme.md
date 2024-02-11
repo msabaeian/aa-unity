@@ -11,7 +11,7 @@ Goals:
 - [DONE] animations and animator basics
 - [DONE] GUI menu (Start, Continue and Exit)
 - [DONE] save data -> ability to continue game from last checkpoint (level in this game)
-- [TODO] use Input System (keyboard and Dual Sense)
+- [DONE] use Input System (keyboard and Dual Sense) - in level scene
 - [TODO] add audio -> background music, sound effect for pin, win and loose
+- [TODO/MAYBE] navigation in GUI buttons and disable continue if there's no checkpoint
 - [TODO/MAYBE] use a JSON file to define different levels instead of hard-coded switch-case
-- [TODO/MAYBE] a better GUID and use new unity UI system (UIToolit?)

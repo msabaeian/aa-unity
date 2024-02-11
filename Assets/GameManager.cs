@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI levelLabel;
     public Animator animator;
     private int levelNumber = 1;
+    public Inputs input = null;
     
     public static GameManager Instance
     {
@@ -39,8 +41,12 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+        
+        input = new Inputs();
+
     }
 
+    
     private void Start()
     {
         Application.targetFrameRate = Screen.currentResolution.refreshRate > 60 ? 60 : Screen.currentResolution.refreshRate ;
@@ -50,6 +56,28 @@ public class GameManager : MonoBehaviour
         this.levelNumber = PlayerPrefs.GetInt("levelNumber", 1);
         LoadLevel(this.levelNumber);
     }
+
+    private void OnEnable()
+    {
+        input.Enable();
+        input.Player.Spawn.performed += OnSpawnPerformed;
+        input.Player.Menu.performed += OnBackPerformed;
+    }
+
+    private void OnDisable()
+    {
+        input.Disable();
+        input.Player.Spawn.performed -= OnSpawnPerformed;
+        input.Player.Menu.performed -= OnBackPerformed;
+    }
+
+    private void OnSpawnPerformed(InputAction.CallbackContext context)
+    {
+        spawn.SpawnPin();
+    }
+
+    private void OnBackPerformed(InputAction.CallbackContext context) => this.BackToMainMenu();
+
 
     public void GameOver()
     {
