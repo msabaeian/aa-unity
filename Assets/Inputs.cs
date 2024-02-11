@@ -71,6 +71,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""799cbcdf-d307-47b9-88c0-e56e0f631fa8"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Spawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""aa1d1c39-d57e-40b9-9240-f192c0d192ad"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
