@@ -61,7 +61,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5a9a6cdb-2ed8-432f-8f1d-31c7331294c6"",
-                    ""path"": ""<DualSenseGamepadHID>/buttonEast"",
+                    ""path"": ""<DualSenseGamepadHID>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

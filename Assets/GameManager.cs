@@ -9,14 +9,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-
     private bool gameOver = false;
     private Spinner spinner;
     private Spawn spawn;
     private TextMeshProUGUI levelLabel;
     public Animator animator;
     private int levelNumber = 1;
-    public Inputs input = null;
+    private Inputs input = null;
     
     public static GameManager Instance
     {

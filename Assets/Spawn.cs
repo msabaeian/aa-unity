@@ -27,6 +27,7 @@ public class Spawn : MonoBehaviour
         {
             levelPinsCount -= 1;
             Instantiate(pinPrefab, transform.position, transform.rotation);
+            gameObject.GetComponent<AudioSource>().Play();
             if (levelPinsCount == 0)
             {
                 pinLeftCountLabelMesh.text = "OK!";

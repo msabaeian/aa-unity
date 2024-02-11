@@ -33,10 +33,12 @@ public class Pin : MonoBehaviour
             
             if (spawner.levelPinsCount == 0)
             {
+                gameObject.GetComponents<AudioSource>()[1].Play();
                 GameManager.Instance.Win();
             }
         }else if (other.tag == "Pin")
         {
+            gameObject.GetComponent<AudioSource>().Play();
             GameManager.Instance.GameOver();
         }
     }
